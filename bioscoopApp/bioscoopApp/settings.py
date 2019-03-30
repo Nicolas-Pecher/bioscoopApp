@@ -124,7 +124,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'c3jkheNAFrXJLm5K5WcSiAMS' #Paste Secret Key
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Brussels'
 
 USE_I18N = True
 
