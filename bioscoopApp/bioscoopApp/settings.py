@@ -82,7 +82,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = '/movies'
 
 WSGI_APPLICATION = 'bioscoopApp.wsgi.application'
 

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+             <p class="display-4">Hi, {{ user.first_name }}</p>
+			{% for movie in movies %}
+			<p><a href="{% url 'movies:movieDescription' movie.id %}">the movie {{movie.title}} has id {{movie.id}}</a><p>
+			{% endfor %}
+
+	{% else %}
+             <a class="lead" href="{% url 'login' %}">Log in</a>
+	{% endif %}
+{% endblock content %}
