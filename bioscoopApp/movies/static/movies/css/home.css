@@ -1,0 +1,69 @@
+#trending {
+    background-color: #264653;
+    height: 100vh;
+}
+
+#trending .container{
+    padding-top: 200px;
+}
+
+#new{
+    background-color: #2A9D8F;
+    height: 100vh;
+    width: 100%;
+}
+
+#bestRated{
+    background-color:#E9C46A;
+    height: 100vh;
+}
+
+#upcomming {
+    background-color: #F4A261;
+    height: 100vh;
+}
+
+nav {
+    position: fixed;
+    width: 100%
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    font-size: 1.7em;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 5%;
+    margin-top: 25px;
+}
+
+nav .trending{
+    color:  #264653;
+}
+
+nav .new {
+    color: #2A9D8F;
+}
+
+nav .bestRated {
+    color: #E9C46A;
+}
+
+nav .upcomming {
+    color: #F4A261
+}
+
+.navColor{
+    color: white !important;
+    font-size: 1.4em !important;
+}
+
+a:hover {
+    color:white !important;
+}

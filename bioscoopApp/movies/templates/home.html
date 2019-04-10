@@ -1,13 +1,42 @@
-{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'movies/css/home.css' %}">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'movies/js/home.js' %}"></script>
 
-{% block content %}
+
 	{% if user.is_authenticated %}
-             <p class="display-4">Hi, {{ user.first_name }}</p>
+	<nav>
+		<ul>
+			<li><a href="#trending" class="trending">Trending</a></li>
+			<li><a href="#new" class="new">New</a></li>
+			<li><a href="#bestRated" class="bestRated">Best Rated</a></li>
+			<li><a href="#upcomming" class="upcomming">Upcomming</a></li>
+		</ul>
+	</nav>
+
+	<div id="trending">
+		
+		<div class="container">
 			{% for movie in movies %}
 			<p><a href="{% url 'movies:movieDescription' movie.id %}">the movie {{movie.title}} has id {{movie.id}}</a><p>
 			{% endfor %}
+		</div>
+	</div>
 
+	<div id="new">
+		
+	</div>
+	<div id="bestRated">
+		
+	</div>
+	<div id="upcomming">
+		
+	</div>
+
+
+	
 	{% else %}
              <a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
-{% endblock content %}
+
