@@ -1,31 +1,32 @@
 #trending {
     background-color: #264653;
-    height: 100vh;
+    min-height: 140vh;
 }
 
-#trending .container{
-    padding-top: 200px;
+.container{
+    padding-top: 125px;
 }
 
 #new{
     background-color: #2A9D8F;
-    height: 100vh;
-    width: 100%;
+    min-height: 140vh;
 }
 
 #bestRated{
     background-color:#E9C46A;
-    height: 100vh;
+    min-height: 140vh;
 }
 
 #upcomming {
     background-color: #F4A261;
-    height: 100vh;
+    min-height: 140vh;
 }
 
 nav {
     position: fixed;
-    width: 100%
+    width: 100%;
+    z-index: 1;
+    background-color: #264653;
 }
 
 
@@ -35,12 +36,13 @@ nav ul{
     flex-direction: row;
     justify-content: left;
     font-size: 1.7em;
+    margin-bottom: 5px;
 }
 
 nav li{
     display: inline-block;
     margin-right: 5%;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 nav .trending{
@@ -60,10 +62,31 @@ nav .upcomming {
 }
 
 .navColor{
-    color: white !important;
-    font-size: 1.4em !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.2em !important;
+    font-weight: 400;
 }
 
 a:hover {
     color:white !important;
+}
+
+.movieBox a:hover{
+    color: blue !important;
+}
+
+.movieBox div {
+    padding:4px;
+    background-color: white;
+    box-shadow: 1px 5px 15px #182d35;
+    margin-bottom: 35px;
+}
+
+.movieBox p{
+    padding: 10px 5px !important;
+    margin: 0;
+}
+
+.col-centered{
+    margin: auto !important;
 }

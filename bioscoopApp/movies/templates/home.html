@@ -17,20 +17,74 @@
 
 	<div id="trending">
 		
-		<div class="container">
-			{% for movie in movies %}
-			<p><a href="{% url 'movies:movieDescription' movie.id %}">the movie {{movie.title}} has id {{movie.id}}</a><p>
-			{% endfor %}
+		<div class="container justify-content-center">
+			<div class="row col-11 col-centered">
+				{% for movie in movies %}
+				<div class="col-3 movieBox ">
+					<a href="{% url 'movies:movieDescription' movie.id %}">
+					<div>
+						<img src="{% static movie.picture %}" width="100%"/>
+						<p>{{movie.title}}</p>
+					</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 
 	<div id="new">
+
+		<div class="container justify-content-center">
+			<div class="row col-11 col-centered">
+				{% for movie in movies %}
+				<div class="col-3 movieBox ">
+					<a href="{% url 'movies:movieDescription' movie.id %}">
+					<div>
+						<img src="{% static movie.picture %}" width="100%"/>
+						<p>{{movie.title}}</p>
+					</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
 		
 	</div>
 	<div id="bestRated">
+
+		<div class="container justify-content-center">
+			<div class="row col-11 col-centered">
+				{% for movie in movies %}
+				<div class="col-3 movieBox ">
+					<a href="{% url 'movies:movieDescription' movie.id %}">
+					<div>
+						<img src="{% static movie.picture %}" width="100%"/>
+						<p>{{movie.title}}</p>
+					</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
 		
 	</div>
 	<div id="upcomming">
+
+		<div class="container justify-content-center">
+			<div class="row col-11 col-centered">
+				{% for movie in movies %}
+				<div class="col-3 movieBox ">
+					<a href="{% url 'movies:movieDescription' movie.id %}">
+					<div>
+						<img src="{% static movie.picture %}" width="100%"/>
+						<p>{{movie.title}}</p>
+					</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
 		
 	</div>
 
