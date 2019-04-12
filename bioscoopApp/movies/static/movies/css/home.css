@@ -45,6 +45,29 @@ nav li{
     margin-top: 5px;
 }
 
+nav img {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.favorite{
+    top: 55px;
+    right: 25px;
+    display: none;
+
+}
+
+.exit{
+    top: 105px;
+    right: 20px;
+    display: none;
+}
+
+
+
 nav .trending{
     color:  #264653;
 }
@@ -67,12 +90,16 @@ nav .upcomming {
     font-weight: 400;
 }
 
+.container a{
+    color: #182d35 !important;
+}
+
 a:hover {
     color:white !important;
 }
 
 .movieBox a:hover{
-    color: blue !important;
+    color: rgb(0, 110, 255) !important;
 }
 
 .movieBox div {

@@ -22,6 +22,23 @@ $(document).ready(function () {
             changeHighlight('upcomming')
         }
     });
+
+    //toggle the visibility of favorite and log out icon
+    var toggle = true;
+    document.getElementById('hamburger').addEventListener('click',function () { 
+        if (toggle) {
+            $('.menuIcons').fadeIn(500);
+            console.log('visible')
+        } else {
+            $('.menuIcons').fadeOut(300);
+            console.log('invisible')
+        }
+        toggle = !toggle;
+    })
+
+    $('.exit').click(function() {
+        location.assign('./logout');
+    })
 });
 
 function changeHighlight(highlight) {

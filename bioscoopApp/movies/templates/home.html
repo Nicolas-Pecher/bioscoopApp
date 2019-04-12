@@ -1,7 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'movies/css/home.css' %}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'movies/js/home.js' %}"></script>
 
 
@@ -13,10 +13,12 @@
 			<li><a href="#bestRated" class="bestRated">Best Rated</a></li>
 			<li><a href="#upcomming" class="upcomming">Upcomming</a></li>
 		</ul>
+		<img src="{% static 'movies/pictures/hamburgerIcon.svg'%}" id="hamburger"/>
+		<img src="{% static 'movies/pictures/star.svg'%}" class="favorite menuIcons" alt="Favorites" title="Favorite"/>
+		<img src="{% static 'movies/pictures/exit.svg'%}" class="exit menuIcons" alt="Logout" title="Log out"/>
 	</nav>
 
 	<div id="trending">
-		
 		<div class="container justify-content-center">
 			<div class="row col-11 col-centered">
 				{% for movie in movies %}
@@ -91,6 +93,6 @@
 
 	
 	{% else %}
-             <a class="lead" href="{% url 'login' %}">Log in</a>
+		<a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
 
