@@ -39,6 +39,16 @@ $(document).ready(function () {
     $('.exit').click(function() {
         location.assign('./logout');
     })
+
+    $('.favorite').click(function() {
+        location.assign('./favorites');
+    })
+
+    $('.ticket').click(function() {
+        location.assign('./screenings');
+    })
+
+
 });
 
 function changeHighlight(highlight) {

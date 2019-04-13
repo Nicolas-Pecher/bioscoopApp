@@ -1,0 +1,97 @@
+nav {
+    width: 100%;
+    background-color: #264653;
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 5%;
+    margin-top: 5px;
+}
+
+nav .trending{
+    color:  white;
+}
+
+nav .new {
+    color: #2A9D8F;
+}
+
+nav .bestRated {
+    color: #E9C46A;
+}
+
+nav .upcomming {
+    color: #F4A261
+}
+
+.navColor{
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.2em !important;
+    font-weight: 400;
+}
+
+a:hover {
+    color:white !important;
+}
+
+/* NIEUWE STYLING VOOR PAGINA DESCRIPTION*/
+
+body{
+    background-color: #264653;
+}
+
+h1{
+    padding: 40px 0px;
+}
+
+.white{
+    color: white;
+}
+
+.descriptionImage{
+    width: 300px;
+    height: 400px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.btnBuyTicket{
+    border: none;
+    border-radius: 10px;
+    background-color:  #2A9D8F;
+    color:white;
+    font-size: 1.5em;
+    padding: 10px 25px;
+}
+
+.btnBuyTicket:hover{
+    background-color:  rgb(31, 122, 112);
+}
+
+.commentBox{
+    border-radius: 5px;
+    background-color:  #2A9D8F;
+    color:white;
+    padding: 15px;
+}
+
+.commentBox p {
+    margin-bottom: 0px;
+}
+
+form {
+    padding: 0px 18px;
+}

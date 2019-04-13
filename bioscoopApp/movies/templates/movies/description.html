@@ -1,8 +1,73 @@
-{% extends "base.html" %}
+{% load static %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static "movies/css/description.css"%}">
 
-{% block content %}
-	<h1>This is the description view</h1>
-	<p>the id of the user is {{user.id}}</p>
-	
-	<p>The movie you clicked is: {{movie.title }} </p>
-{% endblock content %}
+<nav>
+        <ul>
+            <li><a href="../#trending" class="trending">Trending</a></li>
+            <li><a href="../#new" class="new">New</a></li>
+            <li><a href="../#bestRated" class="bestRated">Best Rated</a></li>
+            <li><a href="../#upcomming" class="upcomming">Upcomming</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="container">
+    <h1 class="white">{{movie.title}}</h1>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <img class="descriptionImage" src="{% static movie.picture %}" alt="Image of movie">
+            </div>
+            <div class="col-sm-6 col-lg-5 white">
+                <p class="mb-4">{{movie.description}}</p>
+                <p class="mb-4"><b>Actors:</b> 
+                {% for actor in movie.actor_set.all %}
+                    {{actor.name}},
+                {% endfor %}
+                </p>
+                <p class="mb-4"><b>Producer:</b>
+                {% for producer in movie.producer_set.all %}
+                    {{producer.name}},
+                {% endfor %}
+                </p>
+                <p class="mb-4"><b>Director:</b>
+                 {% for director in movie.director_set.all %}
+                    {{director.name}},
+                {% endfor %}
+                </p>
+                <p class="mb-4"><b>Duration:</b> {{movie.duration}} minutes</p>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-12">
+                <button class="btnBuyTicket">Buy Ticket</button>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-6">
+                <h2 class="white">Comments</h2>
+
+                <form action="{% url 'movies:comment' movie.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <input class="col-9" type="text" name="comment" />
+                        <button class="col-3" type="submit">submit</button>
+                    </div>
+                </form>
+                
+                {% for comment in movie.comment_set.all %}
+                    <div class="commentBox white mt-3 mb-2">
+                        <p>
+                            {{comment.user.first_name}} {{comment.user.last_name}} :
+                            <br />{{comment.comment}}
+                        </p>
+                    </div>
+                {% endfor %}
+               
+            </div>
+            <div class="col-sm-6">
+                <iframe width="560" height="315" src="{{movie.trailer}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>

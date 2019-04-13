@@ -1,5 +1,9 @@
-{% extends "base.html" %}
-
-{% block content %}
-	<h1>This is the reservation view</h1>
-{% endblock content %}
+{% load static %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<div class="container">
+		<h1>This is the screenings view</h1>
+		<p>The session you clicked has id {{session.id }} and the played movie is {{session.movie}}</p>
+		
+	</div>

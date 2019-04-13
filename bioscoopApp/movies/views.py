@@ -2,7 +2,8 @@ from django.shortcuts import render, HttpResponseRedirect, get_list_or_404
 from django.template import RequestContext
 from django.contrib.auth import logout as auth_logout
 from django.views import generic
-from .models import Movie
+from django.urls import reverse
+from .models import *
 
    
 def home(request):
@@ -15,24 +16,34 @@ def logout(request):
     return HttpResponseRedirect('/accounts/login')
 
 class ScreeningsView(generic.ListView):
-    model = Movie
+    context_object_name = "sessions"
     template_name = 'movies/screenings.html'
 
     def get_queryset(self):
-        return Movie.objects.all()
-
-class MovieDescriptionView(generic.DetailView):
-    model = Movie
-    template_name = 'movies/description.html'
+        return Session.objects.all()
 
 class MovieDescriptionView(generic.DetailView):
     model = Movie
     template_name = 'movies/description.html'
 
 class ReservationView(generic.DetailView):
-    model = Movie
+    model = Session
     template_name = 'movies/reservation.html'
 
-   
-def ConfirmationView(request):
+class FavoritesView(generic.ListView):
+    model = Movie
+    template_name = 'movies/favorite.html'
+
+    def get_queryset(self):
+        return Movie.objects.all()
+
+
+def confirmationView(request):
     return render(request, 'movies/confirmation.html')
+
+def comment(request,movie_id):
+    print(request.POST['comment'])
+    movie = Movie.objects.get(pk=movie_id)
+    newComment = Comment(user = request.user,movie = movie,comment = request.POST['comment'])
+    newComment.save()
+    return  HttpResponseRedirect(reverse('movies:movieDescription', args = (movie.id,)))
