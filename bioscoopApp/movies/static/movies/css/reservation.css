@@ -1,0 +1,116 @@
+nav {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 5%;
+    margin-top: 5px;
+}
+
+nav .trending{
+    color:  white;
+}
+
+nav .new {
+    color: #2A9D8F;
+}
+
+nav .bestRated {
+    color: #E9C46A;
+}
+
+nav .upcomming {
+    color: #F4A261
+}
+
+.navColor{
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.2em !important;
+    font-weight: 400;
+}
+
+a:hover {
+    color:white !important;
+}
+
+/* NIEUWE SYLING VOOR SCREENINGS PAGE*/
+
+.hidden{
+    visibility: hidden;
+}
+
+body{
+    background-color: #264653;
+}
+
+.white{
+    color: white;
+}
+
+.ticket{
+    background-color: white;
+    border-radius: 10px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+button{
+    border: none;
+    padding: 10px 35px;
+    border-radius: 10px;
+    background-color: #2A9D8F;
+    color: white;
+    box-shadow: 1px 1px 20px rgba(42, 157, 144, 0.692);
+}
+
+button:hover{
+    background-color: rgb(37, 138, 126);
+}
+
+.inline{
+    display: inline;
+}
+.movieTitle{
+    color: black;
+    border: 1px;
+}
+.underline{
+ text-decoration: underline;
+ font-size: 1.2em;
+ margin-top: 35px;
+}
+.icons:hover{
+    color: #2A9D8F;
+}
+
+.col-centered{
+    margin: auto !important;
+}
+
+.container{
+    margin-bottom: 40px;
+}
+
+input{
+    margin-left: 10px;
+}
+
+#amount{
+    width: 40px;
+}

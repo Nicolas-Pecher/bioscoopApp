@@ -1,9 +1,47 @@
 {% load static %}
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'movies/css/reservation.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="{% static 'movies/js/reservation.js'%}"></script>
+
+	<nav>
+        <ul>
+            <li><a href="../#trending" class="trending">Trending</a></li>
+            <li><a href="../#new" class="new">New</a></li>
+            <li><a href="../#bestRated" class="bestRated">Best Rated</a></li>
+            <li><a href="../#upcomming" class="upcomming">Upcomming</a></li>
+        </ul>
+    </nav>
 	
 	<div class="container">
-		<h1>This is the screenings view</h1>
-		<p>The session you clicked has id {{session.id }} and the played movie is {{session.movie}}</p>
-		
-	</div>
+        <div class="row col-lg-10 col-centered">
+            <div class="col-6 col-md-7 col-lg-6">
+                <div class="ticket">
+                    <div class="text-center">
+                        <img class="mt-4" src="{% static session.movie.picture %}" alt="{{session.movie.title}} image">
+                        <p class="movieTitle">{{session.movie.title}}</p>
+                    </div>
+                    <p><span class="mt-5 ml-5">Date</span><span class="ml-5 mr-4 float-right">12/12/2019</span></p>
+                    <p><span class="mt-5 ml-5">Hour</span><span class="ml-5 mr-4 float-right">{{session.begin|date:'H:i'}}</span></p>
+                    <p><span class="mt-5 ml-5">Version</span><span class="ml-5 mr-4 float-right">{{session.version}}</span></p>
+                    <p><span class="mt-5 ml-5">Language</span><span class="ml-5 mr-4 float-right">{{session.language}}</span></p>
+                    <p><span class="mt-5 ml-5">Screening room</span><span class="ml-5 mr-4 float-right">{{session.screeningRoom}}</span></p>
+                    <p><span class="mt-5 mb-5 ml-5">Remaining seats</span><span class="ml-5 mr-4 float-right">12</span></p>
+                    <div class="text-center">
+                        <button class="mb-3">Buy Ticket</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 white">
+                <form>
+                    <p class="underline">Amount of seats</p>
+                    <span id="minusBtn"><i class="far fa-minus-square icons"></i></span><input type="number" id="amount" class="ml-2 mr-2" value="1" max=20 autofocus required name="seats"/><span id="plusBtn"><i class="far fa-plus-square icons"></i></span>
+                    <p class="underline">Payment Method</p>
+                    <p>Paypal <input type="radio" name="payment" value="paypal" class="align-middle"></p>
+                    <p>Mastercard <input type="radio" name="payment" value="mastercard" class="align-middle"></p>
+                    <p>Visa <input type="radio" name="payment" value="visa" class="align-middle" checked></p>
+                </form>
+            </div>
+        </div>
+    </div>
