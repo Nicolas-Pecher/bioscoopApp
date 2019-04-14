@@ -47,3 +47,10 @@ def comment(request,movie_id):
     newComment = Comment(user = request.user,movie = movie,comment = request.POST['comment'])
     newComment.save()
     return  HttpResponseRedirect(reverse('movies:movieDescription', args = (movie.id,)))
+
+def makeReservation(request,session_id):
+    print(request.POST['seats'])
+    session = Session.objects.get(pk=session_id)
+    newReservation = Reservation(user = request.user,session = session,seats = request.POST['seats'],payment = request.POST['payment'])
+    newReservation.save()
+    return  HttpResponseRedirect(reverse('movies:confirmation'))

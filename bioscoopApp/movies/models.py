@@ -57,6 +57,12 @@ class Session(models.Model):
     def __str__(self):
         return self.version
 
+class Reservation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    session = models.ForeignKey(Session, on_delete=models.CASCADE)
+    seats = models.IntegerField()
+    payment = models.CharField(max_length=50)
+
 class Comment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)

@@ -33,6 +33,10 @@ class ProducerInline(admin.TabularInline):
 class MovieAdmin(admin.ModelAdmin):
     inlines = [DirectorInline,ProducerInline]
 '''
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ('id','user', 'session', 'seats')
+
 admin.site.register(Movie,MovieAdmin)
 admin.site.register(Actor)
 admin.site.register(Director)
@@ -40,3 +44,4 @@ admin.site.register(Producer)
 admin.site.register(Session)
 admin.site.register(ScreeningRoom)
 admin.site.register(Comment)
+admin.site.register(Reservation,ReservationAdmin)

@@ -10,4 +10,8 @@ $(document).ready(function () {
       amount = Number(amount) - 1;
     document.getElementById("amount").value=amount;
   });
+
+  $('.buyTicket').click(function (e) { 
+    $('form').submit();
+  });
 });

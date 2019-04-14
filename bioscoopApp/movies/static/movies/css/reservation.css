@@ -62,11 +62,11 @@ body{
 .ticket{
     background-color: white;
     border-radius: 10px;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.288);
 }
 
 img{
     width: 200px;
-    height: 200px;
     border-radius: 10px;
 }
 
@@ -80,15 +80,18 @@ button{
 }
 
 button:hover{
-    background-color: rgb(37, 138, 126);
+    background-color: rgb(57, 190, 175);
 }
 
 .inline{
     display: inline;
 }
 .movieTitle{
-    color: black;
+    color: #264653;
     border: 1px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 .underline{
  text-decoration: underline;

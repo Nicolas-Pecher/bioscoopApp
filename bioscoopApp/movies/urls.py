@@ -11,5 +11,6 @@ urlpatterns = [
     path('confirmation',views.confirmationView, name="confirmation"),
     path('favorites',views.FavoritesView.as_view(), name="favorites"),
     path('<int:movie_id>/comment',views.comment, name="comment"),
+    path('<int:session_id>/makeReservation',views.makeReservation, name="makeReservation"),
 
 ]
