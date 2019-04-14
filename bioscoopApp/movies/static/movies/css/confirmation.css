@@ -1,0 +1,29 @@
+
+/* NIEUWE STYLING */
+
+body{
+    background-color: #264653;
+    color: white;
+}
+.clear{
+    clear: both;
+}
+img{
+    height: 400px;
+    border-radius: 10px;
+}
+button{
+    border: none;
+    padding: 10px 50px;
+    border-radius: 10px;
+    background-color: #2A9D8F;
+    color: white;
+    font-size: 1.5em;
+}
+
+button:hover{
+    background-color: rgb(37, 138, 126);
+}
+.inline{
+    display: inline-block;
+}

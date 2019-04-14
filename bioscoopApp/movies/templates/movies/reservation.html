@@ -22,7 +22,7 @@
                         <img class="mt-4" src="{% static session.movie.picture %}" alt="{{session.movie.title}} image">
                         <p class="movieTitle">{{session.movie.title}}</p>
                     </div>
-                    <p><span class="mt-5 ml-5">Date</span><span class="ml-5 mr-4 float-right">12/12/2019</span></p>
+                    <p><span class="mt-5 ml-5">Date</span><span class="ml-5 mr-4 float-right">{{session.begin|date:'d/m/Y'}}</span></p>
                     <p><span class="mt-5 ml-5">Hour</span><span class="ml-5 mr-4 float-right">{{session.begin|date:'H:i'}}</span></p>
                     <p><span class="mt-5 ml-5">Version</span><span class="ml-5 mr-4 float-right">{{session.version}}</span></p>
                     <p><span class="mt-5 ml-5">Language</span><span class="ml-5 mr-4 float-right">{{session.language}}</span></p>

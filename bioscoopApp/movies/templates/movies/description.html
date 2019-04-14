@@ -39,11 +39,14 @@
                 <p class="mb-4"><b>Duration:</b> {{movie.duration}} minutes</p>
             </div>
         </div>
-        <div class="row mt-5 mb-5">
-            <div class="col-sm-12">
-                <button class="btnBuyTicket">Buy Ticket</button>
+        {% if movie.session_set.all %}
+            <div class="row mt-5 mb-5">
+                <div class="col-sm-12">
+                    <a href="{% url 'movies:screenings' %}"><button class="btnBuyTicket">Buy Ticket</button></a>
+                </div>
             </div>
-        </div>
+        {% endif %}
+        
         <div class="row mt-5 mb-5">
             <div class="col-sm-6">
                 <h2 class="white">Comments</h2>

@@ -37,9 +37,9 @@ class FavoritesView(generic.ListView):
     def get_queryset(self):
         return Movie.objects.all()
 
-
-def confirmationView(request):
-    return render(request, 'movies/confirmation.html')
+class confirmationView(generic.DetailView):
+    model = Reservation
+    template_name = 'movies/confirmation.html'
 
 def comment(request,movie_id):
     print(request.POST['comment'])
@@ -53,4 +53,4 @@ def makeReservation(request,session_id):
     session = Session.objects.get(pk=session_id)
     newReservation = Reservation(user = request.user,session = session,seats = request.POST['seats'],payment = request.POST['payment'])
     newReservation.save()
-    return  HttpResponseRedirect(reverse('movies:confirmation'))
+    return  HttpResponseRedirect(reverse('movies:confirmation', args = (newReservation.id,) ))
