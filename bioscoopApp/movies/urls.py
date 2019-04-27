@@ -10,6 +10,7 @@ urlpatterns = [
     path('<int:pk>/reservation', views.ReservationView.as_view(), name="reservation"),
     path('<int:pk>/confirmation',views.confirmationView.as_view(), name="confirmation"),
     path('favorites',views.FavoritesView.as_view(), name="favorites"),
+    path('<int:movie_id>/addFavorite',views.addFavorite, name="addFavorite"),
     path('<int:movie_id>/comment',views.comment, name="comment"),
     path('<int:session_id>/makeReservation',views.makeReservation, name="makeReservation"),
 

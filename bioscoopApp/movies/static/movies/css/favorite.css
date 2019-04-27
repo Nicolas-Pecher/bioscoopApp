@@ -1,0 +1,85 @@
+body{
+    background-color: #264653;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    padding: 30px 45px;
+}
+
+nav {
+    width: 100%;
+    background-color: #264653;
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 5%;
+    margin-top: 5px;
+}
+
+nav .trending{
+    color:  white;
+}
+
+nav .new {
+    color: #2A9D8F;
+}
+
+nav .bestRated {
+    color: #E9C46A;
+}
+
+nav .upcomming {
+    color: #F4A261
+}
+
+.navColor{
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.2em !important;
+    font-weight: 400;
+}
+
+a:hover {
+    color:white !important;
+}
+
+.container a{
+    color: #182d35 !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color:white !important;
+}
+
+.movieBox a:hover{
+    color: rgb(0, 110, 255) !important;
+}
+
+.movieBox div {
+    padding:4px;
+    background-color: white;
+    box-shadow: 1px 5px 15px #182d35;
+    margin-bottom: 35px;
+}
+
+.movieBox p{
+    padding: 10px 5px !important;
+    margin: 0;
+}
+
+.col-centered{
+    margin: auto !important;
+}

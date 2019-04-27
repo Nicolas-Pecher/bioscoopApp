@@ -39,13 +39,20 @@
                 <p class="mb-4"><b>Duration:</b> {{movie.duration}} minutes</p>
             </div>
         </div>
-        {% if movie.session_set.all %}
-            <div class="row mt-5 mb-5">
-                <div class="col-sm-12">
+
+        <div class="mt-5 mb-5">
+            <div class="row col-sm-12">
+                {% if movie.session_set.all %}
                     <a href="{% url 'movies:screenings' %}"><button class="btnBuyTicket">Buy Ticket</button></a>
-                </div>
+                {% endif %}
+                <form action="{% url 'movies:addFavorite' movie.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btnBuyTicket" type="submit">Add to favorites</button>
+                </form>
+                    
             </div>
-        {% endif %}
+        </div>
+       
         
         <div class="row mt-5 mb-5">
             <div class="col-sm-6">

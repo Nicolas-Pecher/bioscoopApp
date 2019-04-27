@@ -31,11 +31,11 @@ class ReservationView(generic.DetailView):
     template_name = 'movies/reservation.html'
 
 class FavoritesView(generic.ListView):
-    model = Movie
+    context_object_name = "favorites"
     template_name = 'movies/favorite.html'
 
     def get_queryset(self):
-        return Movie.objects.all()
+        return Favorites.objects.filter(user = self.request.user)
 
 class confirmationView(generic.DetailView):
     model = Reservation
@@ -54,3 +54,9 @@ def makeReservation(request,session_id):
     newReservation = Reservation(user = request.user,session = session,seats = request.POST['seats'],payment = request.POST['payment'])
     newReservation.save()
     return  HttpResponseRedirect(reverse('movies:confirmation', args = (newReservation.id,) ))
+
+def addFavorite(request,movie_id):
+    movie = Movie.objects.get(pk=movie_id)
+    newFavorite = Favorites(user = request.user,movie = movie)
+    newFavorite.save()
+    return  HttpResponseRedirect(reverse('movies:movieDescription', args = (movie.id,)))
