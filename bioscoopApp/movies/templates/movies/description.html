@@ -11,7 +11,12 @@
             <li><a href="../#upcomming" class="upcomming">Upcomming</a></li>
         </ul>
     </nav>
-    
+
+     {% if messages %}
+       {% for message in messages %}
+            <p class="confirmMessage">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
 
     <div class="container">
     <h1 class="white">{{movie.title}}</h1>
@@ -81,3 +86,6 @@
             </div>
         </div>
     </div>
+    <script>
+        $('.confirmMessage').fadeOut(2000);
+    </script>

@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.contrib.auth import logout as auth_logout
 from django.views import generic
 from django.urls import reverse
+from django.contrib import messages
 from .models import *
 
    
@@ -59,4 +60,5 @@ def addFavorite(request,movie_id):
     movie = Movie.objects.get(pk=movie_id)
     newFavorite = Favorites(user = request.user,movie = movie)
     newFavorite.save()
+    messages.add_message(request,messages.INFO,"Succesfully saved to favorites!")
     return  HttpResponseRedirect(reverse('movies:movieDescription', args = (movie.id,)))
